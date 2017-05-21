@@ -1,20 +1,20 @@
 <h1 class="text-center">Saved product list</h1>
+<?php $product = $model->getAll(); ?>
 
-<div class="container">
-    <table class="table table-bordered table-hover text-center">
+<table class="table table-bordered table-hover text-center">
+    <tr>
+        <th>ID</th>
+        <th>URL</th>
+        <th>Price(general)</th>
+        <th>Price(UAH)</th>
+    </tr> 
+    <?php foreach ($product as $v): ?>
         <tr>
-            <th>ID</th>
-            <th>URL</th>
-            <th>Name</th>
-            <th>Price()</th>
-            <th>Price(UAH)</th>
+            <td><?php echo $v['id'] ?></td>
+            <td><a href='<?php echo $v['url'] ?>'>Link</a></td>
+            <td><?php echo $v['price_value'] ?></td>
+            <td><?php echo $v['id'] ?></td>
         </tr> 
-        <tr>
-            <td>1</td>
-            <td>www.asd.com</td>
-            <td>pen</td>
-            <td>20</td>
-            <td>140</td>
-        </tr> 
-    </table>
-</div>
+    <?php endforeach; ?>
+</table>
+
